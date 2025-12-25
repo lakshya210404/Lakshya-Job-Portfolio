@@ -60,11 +60,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         {...props}
       >
-        {variant === "hero" ? (
-          <span className="relative z-10">{children}</span>
-        ) : (
-          children
-        )}
+        {children}
       </Comp>
     );
   }

@@ -63,7 +63,7 @@ const HeroSection = () => {
           <div className="flex flex-wrap items-center justify-center gap-4 mb-16 animate-fade-in stagger-5">
             <Button variant="hero" size="lg" asChild>
               <a href="#experience">
-                View My Work
+                <span className="relative z-10">View My Work</span>
               </a>
             </Button>
             <Button variant="neon" size="lg" asChild>
