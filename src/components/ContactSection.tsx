@@ -169,7 +169,7 @@ const ContactSection = () => {
                     <Linkedin className="w-5 h-5" />
                   </a>
                   <a
-                    href="https://github.com"
+                    href="https://github.com/lakshya210404"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-3 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300 hover:-translate-y-1"

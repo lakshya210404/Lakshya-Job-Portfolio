@@ -41,7 +41,7 @@ const Footer = () => {
                 <Linkedin className="w-4 h-4" />
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/lakshya210404"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-muted/50 hover:bg-primary/20 hover:text-primary transition-all duration-300"
