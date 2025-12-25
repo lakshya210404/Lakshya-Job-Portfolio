@@ -6,65 +6,65 @@
 
 @layer base {
   :root {
-    --background: 220 20% 4%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
 
-    --card: 220 20% 8%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 220 20% 6%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 185 100% 50%;
-    --primary-foreground: 220 20% 4%;
+    --primary: 0 85% 55%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 280 100% 65%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 0 70% 40%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 220 20% 15%;
-    --muted-foreground: 215 20% 55%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 55%;
 
-    --accent: 185 100% 50%;
-    --accent-foreground: 220 20% 4%;
+    --accent: 0 85% 55%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 220 20% 18%;
-    --input: 220 20% 15%;
-    --ring: 185 100% 50%;
+    --border: 0 0% 18%;
+    --input: 0 0% 15%;
+    --ring: 0 85% 55%;
 
     --radius: 0.75rem;
 
     /* Custom tokens */
-    --glow-primary: 185 100% 50%;
-    --glow-secondary: 280 100% 65%;
-    --gradient-start: 185 100% 50%;
-    --gradient-end: 280 100% 65%;
+    --glow-primary: 0 85% 55%;
+    --glow-secondary: 0 70% 40%;
+    --gradient-start: 0 85% 55%;
+    --gradient-end: 0 50% 30%;
     
     /* Glass effect */
-    --glass-bg: 220 20% 8% / 0.6;
-    --glass-border: 220 20% 30% / 0.3;
+    --glass-bg: 0 0% 8% / 0.6;
+    --glass-border: 0 0% 30% / 0.3;
     
-    /* Neon colors */
-    --neon-cyan: 185 100% 50%;
-    --neon-purple: 280 100% 65%;
-    --neon-pink: 330 100% 65%;
+    /* Neon colors - Sony red/black inspired */
+    --neon-red: 0 85% 55%;
+    --neon-crimson: 350 80% 50%;
+    --neon-dark-red: 0 70% 40%;
     --neon-green: 145 100% 50%;
 
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-foreground: 0 0% 26%;
+    --sidebar-primary: 0 0% 10%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 0 0% 91%;
+    --sidebar-ring: 0 85% 55%;
   }
 
   .dark {
-    --background: 220 20% 4%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
   }
 }
 
@@ -109,12 +109,12 @@
   /* Gradient text */
   .gradient-text {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--neon-crimson)));
   }
 
   .gradient-text-animated {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--secondary)), hsl(var(--neon-pink)), hsl(var(--primary)));
+    background-image: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--neon-crimson)), hsl(var(--neon-dark-red)), hsl(var(--primary)));
     background-size: 300% 100%;
     animation: gradient-shift 4s ease infinite;
   }
@@ -168,7 +168,7 @@
     inset: -1px;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--neon-crimson)));
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
@@ -208,7 +208,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--secondary)));
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--neon-crimson)));
     transition: width 0.3s ease;
   }
 
@@ -250,8 +250,8 @@
   /* Cyber grid */
   .cyber-grid {
     background-image: 
-      linear-gradient(hsl(var(--border) / 0.1) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(var(--border) / 0.1) 1px, transparent 1px);
+      linear-gradient(hsl(var(--primary) / 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--primary) / 0.1) 1px, transparent 1px);
     background-size: 50px 50px;
   }
 
@@ -264,6 +264,22 @@
     background-size: 100% 100%, 40px 40px, 40px 40px;
     transform: perspective(500px) rotateX(60deg);
     transform-origin: center top;
+  }
+
+  /* Parallax layers */
+  .parallax-slow {
+    will-change: transform;
+    transition: transform 0.1s ease-out;
+  }
+
+  .parallax-medium {
+    will-change: transform;
+    transition: transform 0.1s ease-out;
+  }
+
+  .parallax-fast {
+    will-change: transform;
+    transition: transform 0.1s ease-out;
   }
 }
 
@@ -393,7 +409,7 @@
 }
 
 .glitch::after {
-  color: hsl(var(--secondary));
+  color: hsl(var(--neon-crimson));
   animation: glitch-2 3s infinite linear alternate-reverse;
   z-index: -2;
 }

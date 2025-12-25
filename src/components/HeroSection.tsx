@@ -16,13 +16,13 @@ const HeroSection = () => {
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 cyber-grid opacity-30" />
-      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-[100px] animate-pulse" />
-      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-secondary/20 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '1s' }} />
+      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/15 rounded-full blur-[120px] animate-pulse" />
+      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-neon-crimson/10 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '1s' }} />
 
       <div className="container mx-auto px-6 py-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Status badge */}
-          <Badge variant="neon" className="mb-8 animate-fade-in">
+          <Badge variant="glow" className="mb-8 animate-fade-in">
             <span className="w-2 h-2 bg-neon-green rounded-full mr-2 animate-pulse" />
             Available for opportunities
           </Badge>

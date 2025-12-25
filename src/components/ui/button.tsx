@@ -22,13 +22,13 @@ const buttonVariants = cva(
         link:
           "text-primary underline-offset-4 hover:underline",
         glow:
-          "relative bg-gradient-to-r from-primary to-secondary text-primary-foreground overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-foreground/20 before:to-transparent before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-700",
+          "relative bg-gradient-to-r from-primary to-neon-crimson text-primary-foreground overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-foreground/20 before:to-transparent before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-700",
         hero:
           "relative bg-transparent border-2 border-primary text-primary overflow-hidden group hover:text-primary-foreground before:absolute before:inset-0 before:bg-primary before:translate-y-full before:transition-transform before:duration-300 hover:before:translate-y-0",
         neon:
-          "bg-transparent border border-neon-cyan text-neon-cyan hover:bg-neon-cyan/10 hover:shadow-[0_0_20px_hsl(185_100%_50%/0.5)] transition-shadow",
+          "bg-transparent border border-primary text-primary hover:bg-primary/10 hover:shadow-[0_0_20px_hsl(0_85%_55%/0.5)] transition-shadow",
         cyber:
-          "relative bg-card text-foreground border border-border overflow-hidden after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-gradient-to-r after:from-primary after:to-secondary hover:after:w-full after:transition-all after:duration-300",
+          "relative bg-card text-foreground border border-border overflow-hidden after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-gradient-to-r after:from-primary after:to-neon-crimson hover:after:w-full after:transition-all after:duration-300",
       },
       size: {
         default: "h-11 px-6 py-2",

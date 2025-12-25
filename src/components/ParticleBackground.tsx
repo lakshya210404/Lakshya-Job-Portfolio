@@ -25,10 +25,12 @@ const ParticleBackground = () => {
     let mouseX = 0;
     let mouseY = 0;
 
+    // Red/crimson color palette
     const colors = [
-      'hsl(185, 100%, 50%)', // cyan
-      'hsl(280, 100%, 65%)', // purple
-      'hsl(330, 100%, 65%)', // pink
+      'hsl(0, 85%, 55%)', // primary red
+      'hsl(350, 80%, 50%)', // crimson
+      'hsl(0, 70%, 40%)', // dark red
+      'hsl(0, 90%, 65%)', // bright red
     ];
 
     const resize = () => {
@@ -86,7 +88,7 @@ const ParticleBackground = () => {
         ctx.fillStyle = particle.color.replace(')', `, ${particle.opacity})`).replace('hsl', 'hsla');
         ctx.fill();
 
-        // Draw connections
+        // Draw connections with red color
         particles.slice(index + 1).forEach((otherParticle) => {
           const dx = otherParticle.x - particle.x;
           const dy = otherParticle.y - particle.y;
@@ -96,7 +98,7 @@ const ParticleBackground = () => {
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);
-            ctx.strokeStyle = `hsla(185, 100%, 50%, ${0.1 * (1 - dist / 150)})`;
+            ctx.strokeStyle = `hsla(0, 85%, 55%, ${0.1 * (1 - dist / 150)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
