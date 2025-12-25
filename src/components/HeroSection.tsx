@@ -4,6 +4,19 @@ import { Badge } from '@/components/ui/badge';
 import GlitchText from './GlitchText';
 import TypewriterText from './TypewriterText';
 
+const getResumeHref = () => {
+  const path = '/Lakshya_Prasad_Resume.pdf';
+  if (typeof window === 'undefined') return path;
+
+  const params = new URLSearchParams(window.location.search);
+  const token = params.get('__lovable_token');
+  if (!token) return path;
+
+  const url = new URL(path, window.location.origin);
+  url.searchParams.set('__lovable_token', token);
+  return `${url.pathname}${url.search}`;
+};
+
 const HeroSection = () => {
   const roles = [
     'DevOps Engineer',
@@ -67,12 +80,7 @@ const HeroSection = () => {
               </a>
             </Button>
             <Button variant="neon" size="lg" asChild>
-              <a
-                href="/Lakshya_Prasad_Resume.pdf"
-                download="Lakshya_Prasad_Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={getResumeHref()} download="Lakshya_Prasad_Resume.pdf">
                 <Download className="w-4 h-4 mr-2" />
                 Download Resume
               </a>
