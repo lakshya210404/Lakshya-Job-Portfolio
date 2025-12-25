@@ -8,18 +8,18 @@ interface Skill {
 }
 
 const skills: Skill[] = [
-  { name: 'React', category: 'Frontend', color: 'neon-cyan' },
-  { name: 'TypeScript', category: 'Languages', color: 'neon-purple' },
-  { name: 'Python', category: 'Languages', color: 'neon-green' },
-  { name: 'Docker', category: 'DevOps', color: 'neon-cyan' },
-  { name: 'AWS', category: 'Cloud', color: 'neon-pink' },
-  { name: 'Azure', category: 'Cloud', color: 'neon-cyan' },
-  { name: 'Go', category: 'Languages', color: 'neon-cyan' },
-  { name: 'PostgreSQL', category: 'Database', color: 'neon-purple' },
-  { name: 'Node.js', category: 'Backend', color: 'neon-green' },
-  { name: 'Kubernetes', category: 'DevOps', color: 'neon-purple' },
-  { name: 'Java', category: 'Languages', color: 'neon-pink' },
-  { name: 'C#', category: 'Languages', color: 'neon-purple' },
+  { name: 'React', category: 'Frontend', color: 'primary' },
+  { name: 'TypeScript', category: 'Languages', color: 'crimson' },
+  { name: 'Python', category: 'Languages', color: 'primary' },
+  { name: 'Docker', category: 'DevOps', color: 'crimson' },
+  { name: 'AWS', category: 'Cloud', color: 'primary' },
+  { name: 'Azure', category: 'Cloud', color: 'crimson' },
+  { name: 'Go', category: 'Languages', color: 'primary' },
+  { name: 'PostgreSQL', category: 'Database', color: 'crimson' },
+  { name: 'Node.js', category: 'Backend', color: 'primary' },
+  { name: 'Kubernetes', category: 'DevOps', color: 'crimson' },
+  { name: 'Java', category: 'Languages', color: 'primary' },
+  { name: 'C#', category: 'Languages', color: 'crimson' },
 ];
 
 const SkillOrbit = () => {
@@ -28,13 +28,13 @@ const SkillOrbit = () => {
   return (
     <div className="relative w-full h-[500px] flex items-center justify-center">
       {/* Center core */}
-      <div className="absolute w-24 h-24 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center z-10 glow-primary">
+      <div className="absolute w-24 h-24 rounded-full bg-gradient-to-br from-primary to-neon-crimson flex items-center justify-center z-10 glow-primary">
         <span className="font-mono text-sm font-bold text-primary-foreground">SKILLS</span>
       </div>
 
       {/* Orbit rings */}
       <div className="absolute w-48 h-48 rounded-full border border-primary/20 animate-spin-slow" style={{ animationDuration: '30s' }} />
-      <div className="absolute w-72 h-72 rounded-full border border-secondary/20 animate-spin-slow" style={{ animationDuration: '40s', animationDirection: 'reverse' }} />
+      <div className="absolute w-72 h-72 rounded-full border border-neon-crimson/20 animate-spin-slow" style={{ animationDuration: '40s', animationDirection: 'reverse' }} />
       <div className="absolute w-96 h-96 rounded-full border border-primary/10 animate-spin-slow" style={{ animationDuration: '50s' }} />
 
       {/* Skill nodes */}
@@ -61,15 +61,13 @@ const SkillOrbit = () => {
               className={cn(
                 "px-3 py-1.5 rounded-full text-xs font-mono font-medium",
                 "border backdrop-blur-sm transition-all duration-300",
-                skill.color === 'neon-cyan' && "border-neon-cyan/50 bg-neon-cyan/10 text-neon-cyan",
-                skill.color === 'neon-purple' && "border-neon-purple/50 bg-neon-purple/10 text-neon-purple",
-                skill.color === 'neon-pink' && "border-neon-pink/50 bg-neon-pink/10 text-neon-pink",
-                skill.color === 'neon-green' && "border-neon-green/50 bg-neon-green/10 text-neon-green",
+                skill.color === 'primary' && "border-primary/50 bg-primary/10 text-primary",
+                skill.color === 'crimson' && "border-neon-crimson/50 bg-neon-crimson/10 text-neon-crimson",
                 hoveredSkill === skill.name && "shadow-lg"
               )}
               style={{
                 boxShadow: hoveredSkill === skill.name 
-                  ? `0 0 20px hsl(var(--${skill.color}) / 0.5)` 
+                  ? `0 0 20px hsl(0 85% 55% / 0.5)` 
                   : 'none'
               }}
             >

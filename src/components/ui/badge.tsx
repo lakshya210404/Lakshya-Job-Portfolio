@@ -19,9 +19,9 @@ const badgeVariants = cva(
         glow:
           "border-primary/50 bg-primary/10 text-primary",
         neon:
-          "border-[hsl(185,100%,50%)]/50 bg-[hsl(185,100%,50%)]/10 text-[hsl(185,100%,50%)] hover:bg-[hsl(185,100%,50%)]/20",
+          "border-primary/50 bg-primary/10 text-primary hover:bg-primary/20",
         purple:
-          "border-[hsl(280,100%,65%)]/50 bg-[hsl(280,100%,65%)]/10 text-[hsl(280,100%,65%)] hover:bg-[hsl(280,100%,65%)]/20",
+          "border-neon-crimson/50 bg-neon-crimson/10 text-neon-crimson hover:bg-neon-crimson/20",
         glass:
           "border-border/50 bg-card/50 backdrop-blur-sm text-foreground",
       },
