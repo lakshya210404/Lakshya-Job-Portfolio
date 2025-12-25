@@ -62,7 +62,7 @@ const HeroSection = () => {
           {/* CTA Buttons */}
           <div className="flex flex-wrap items-center justify-center gap-4 mb-16 animate-fade-in stagger-5">
             <Button variant="hero" size="lg" asChild>
-              <a href="#projects">
+              <a href="#experience">
                 View My Work
               </a>
             </Button>
