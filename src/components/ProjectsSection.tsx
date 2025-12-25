@@ -2,6 +2,15 @@ import { Badge } from '@/components/ui/badge';
 import ProjectCard from './ProjectCard';
 import AnimatedSection from './AnimatedSection';
 
+import project1 from '@/assets/project-1.jpg';
+import project2 from '@/assets/project-2.jpg';
+import project3 from '@/assets/project-3.jpg';
+import project4 from '@/assets/project-4.jpg';
+import project5 from '@/assets/project-5.jpg';
+import project6 from '@/assets/project-6.jpg';
+import project7 from '@/assets/project-7.jpg';
+import project8 from '@/assets/project-8.jpg';
+
 const projects = [
   {
     title: "Internal Developer Platform & Tooling System",
@@ -12,7 +21,8 @@ const projects = [
       "Designed relational schemas and implemented data access layers",
       "Containerized backend services and deployed to cloud environments",
       "Implemented logging, error handling, and automated tests"
-    ]
+    ],
+    image: project1
   },
   {
     title: "Enterprise AI Knowledge Assistant",
@@ -22,7 +32,8 @@ const projects = [
       "Implemented summarization, data chunking, and evaluation techniques",
       "Enhanced model reliability through advanced prompting strategies",
       "Built vector database integration for semantic search"
-    ]
+    ],
+    image: project2
   },
   {
     title: "HR Integrations & Data Sync Microservice",
@@ -32,7 +43,8 @@ const projects = [
       "Built validation pipelines with retry logic",
       "Implemented rate-limiting and containerization",
       "Deployed on Minikube Kubernetes cluster"
-    ]
+    ],
+    image: project3
   },
   {
     title: "Retail Inventory Monitoring System",
@@ -42,7 +54,8 @@ const projects = [
       "Developed Spring Boot microservices for SKU tracking",
       "Implemented real-time alerting and anomaly detection",
       "Automated latency and error dashboards"
-    ]
+    ],
+    image: project4
   },
   {
     title: "Vehicle Telemetry & Diagnostics Platform",
@@ -51,7 +64,8 @@ const projects = [
     highlights: [
       "Implemented backend services for vehicle state and sensor data",
       "Designed REST APIs improving monitoring efficiency by 30%"
-    ]
+    ],
+    image: project5
   },
   {
     title: "Real-Time Customer Support Dashboard",
@@ -60,7 +74,8 @@ const projects = [
     highlights: [
       "Built live communication updates with WebSockets",
       "Scalable Node.js backend with Docker-AWS deployment"
-    ]
+    ],
+    image: project6
   },
   {
     title: "Next.js Health & Wellness Dashboard",
@@ -69,7 +84,8 @@ const projects = [
     highlights: [
       "Implemented server actions and secure authentication",
       "Ensured accessibility with keyboard navigation and aria-live regions"
-    ]
+    ],
+    image: project7
   },
   {
     title: "HighVibeChat - WebRTC Platform",
@@ -78,7 +94,8 @@ const projects = [
     highlights: [
       "Built custom signalling server",
       "Documented architecture and debugging processes"
-    ]
+    ],
+    image: project8
   }
 ];
 

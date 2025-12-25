@@ -1,4 +1,4 @@
-import { ArrowDown, Mail, Linkedin, Github, MapPin, Phone } from 'lucide-react';
+import { ArrowDown, Mail, Linkedin, Github, MapPin, Phone, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import GlitchText from './GlitchText';
@@ -64,6 +64,12 @@ const HeroSection = () => {
             <Button variant="hero" size="lg" asChild>
               <a href="#projects">
                 View My Work
+              </a>
+            </Button>
+            <Button variant="neon" size="lg" asChild>
+              <a href="/Lakshya_Prasad_Resume.pdf" download>
+                <Download className="w-4 h-4 mr-2" />
+                Download Resume
               </a>
             </Button>
             <Button variant="outline" size="lg" asChild>
