@@ -182,7 +182,7 @@ const ContactSection = () => {
             </div>
 
             {/* Contact Form */}
-            <AnimatedSection delay={200} animation="blur">
+            <div className="animate-fade-in" style={{ animationDelay: '200ms' }}>
               <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-8 border-glow">
                 <h3 className="font-mono text-xl font-bold mb-6">
                   Send me a message
@@ -269,7 +269,7 @@ const ContactSection = () => {
                   </Button>
                 </div>
               </form>
-            </AnimatedSection>
+            </div>
           </div>
         </div>
       </div>
