@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ExternalLink, Github, ChevronRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -9,30 +9,36 @@ interface ProjectCardProps {
   description: string;
   technologies: string[];
   highlights?: string[];
+  image: string;
   index: number;
 }
 
-const ProjectCard = ({ title, description, technologies, highlights, index }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, technologies, highlights, image, index }: ProjectCardProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <div
       className={cn(
-        "group relative glass-card rounded-xl p-6 transition-all duration-500",
-        "hover:border-primary/50 border-glow overflow-hidden"
+        "group relative glass-card rounded-xl overflow-hidden transition-all duration-500",
+        "hover:border-primary/50 border-glow"
       )}
     >
-      {/* Animated corner accent */}
-      <div className="absolute top-0 right-0 w-20 h-20 overflow-hidden">
-        <div className="absolute top-2 right-2 w-16 h-16 bg-gradient-to-br from-primary/20 to-transparent rounded-full blur-xl group-hover:scale-150 transition-transform duration-500" />
+      {/* Project Cover Image */}
+      <div className="relative h-48 overflow-hidden">
+        <img 
+          src={image} 
+          alt={title}
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+        
+        {/* Project number overlay */}
+        <span className="absolute top-4 right-4 text-5xl font-mono font-bold text-white/20 group-hover:text-primary/30 transition-colors">
+          {String(index + 1).padStart(2, '0')}
+        </span>
       </div>
 
-      {/* Project number */}
-      <span className="absolute top-4 right-4 text-6xl font-mono font-bold text-muted/20 group-hover:text-primary/10 transition-colors">
-        {String(index + 1).padStart(2, '0')}
-      </span>
-
-      <div className="relative z-10">
+      <div className="relative z-10 p-6">
         {/* Title */}
         <h3 className="font-mono text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
           {title}
