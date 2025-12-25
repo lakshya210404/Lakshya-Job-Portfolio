@@ -67,7 +67,7 @@ const HeroSection = () => {
               </a>
             </Button>
             <Button variant="neon" size="lg" asChild>
-              <a href="/Lakshya_Prasad_Resume.pdf" download>
+              <a href="/Lakshya_Prasad_Resume.pdf" download="Lakshya_Prasad_Resume.pdf" target="_blank" rel="noopener noreferrer">
                 <Download className="w-4 h-4 mr-2" />
                 Download Resume
               </a>
