@@ -1,4 +1,4 @@
-import { ArrowDown, Mail, Linkedin, Github, MapPin, Phone, Download } from 'lucide-react';
+import { ArrowDown, Linkedin, Github, MapPin, Phone, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import GlitchText from './GlitchText';
@@ -94,13 +94,6 @@ const HeroSection = () => {
 
           {/* Social links */}
           <div className="flex items-center justify-center gap-4 animate-fade-in stagger-6">
-            <a
-              href="mailto:lakshyasprasad21@gmail.com"
-              className="p-3 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300 hover:-translate-y-1"
-              aria-label="Email"
-            >
-              <Mail className="w-5 h-5" />
-            </a>
             <a
               href="https://linkedin.com/in/lakshya-prasad-2104l/"
               target="_blank"
