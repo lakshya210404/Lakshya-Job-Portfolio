@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { ChevronRight } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -15,16 +15,65 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ title, description, technologies, highlights, image, index }: ProjectCardProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [tilt, setTilt] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!cardRef.current) return;
+    
+    const rect = cardRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    
+    // Calculate tilt angles (max 15 degrees)
+    const tiltX = ((y - centerY) / centerY) * -12;
+    const tiltY = ((x - centerX) / centerX) * 12;
+    
+    setTilt({ x: tiltX, y: tiltY });
+  };
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    setTilt({ x: 0, y: 0 });
+  };
 
   return (
     <div
+      ref={cardRef}
       className={cn(
-        "group relative glass-card rounded-xl overflow-hidden transition-all duration-500",
+        "group relative glass-card rounded-xl overflow-hidden transition-all duration-300",
         "hover:border-primary/50 border-glow"
       )}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        transform: isHovered 
+          ? `perspective(1000px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) scale3d(1.02, 1.02, 1.02)`
+          : 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)',
+        transition: isHovered ? 'transform 0.1s ease-out' : 'transform 0.5s ease-out',
+        transformStyle: 'preserve-3d',
+      }}
     >
+      {/* Glare effect */}
+      <div 
+        className="absolute inset-0 pointer-events-none z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        style={{
+          background: isHovered 
+            ? `radial-gradient(circle at ${50 + tilt.y * 2}% ${50 + tilt.x * 2}%, hsl(var(--primary) / 0.15) 0%, transparent 60%)`
+            : 'none',
+        }}
+      />
+
       {/* Project Cover Image */}
-      <div className="relative h-48 overflow-hidden">
+      <div className="relative h-48 overflow-hidden" style={{ transform: 'translateZ(20px)' }}>
         <img 
           src={image} 
           alt={title}
@@ -33,12 +82,15 @@ const ProjectCard = ({ title, description, technologies, highlights, image, inde
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
         
         {/* Project number overlay */}
-        <span className="absolute top-4 right-4 text-5xl font-mono font-bold text-white/20 group-hover:text-primary/30 transition-colors">
+        <span 
+          className="absolute top-4 right-4 text-5xl font-mono font-bold text-white/20 group-hover:text-primary/30 transition-colors"
+          style={{ transform: 'translateZ(40px)' }}
+        >
           {String(index + 1).padStart(2, '0')}
         </span>
       </div>
 
-      <div className="relative z-10 p-6">
+      <div className="relative z-10 p-6" style={{ transform: 'translateZ(30px)' }}>
         {/* Title */}
         <h3 className="font-mono text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
           {title}
