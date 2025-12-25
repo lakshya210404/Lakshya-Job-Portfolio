@@ -1,11 +1,13 @@
-import { useEffect, useRef, useState, ReactNode } from 'react';
+import { useEffect, useRef, useState, ReactNode, Children, cloneElement, isValidElement } from 'react';
 import { cn } from '@/lib/utils';
 
 interface AnimatedSectionProps {
   children: ReactNode;
   className?: string;
   delay?: number;
-  animation?: 'fade-up' | 'fade-right' | 'scale' | 'none';
+  animation?: 'fade-up' | 'fade-down' | 'fade-left' | 'fade-right' | 'scale' | 'blur' | 'rotate' | 'none';
+  stagger?: boolean;
+  staggerDelay?: number;
 }
 
 const AnimatedSection = ({
@@ -13,6 +15,8 @@ const AnimatedSection = ({
   className,
   delay = 0,
   animation = 'fade-up',
+  stagger = false,
+  staggerDelay = 100,
 }: AnimatedSectionProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -35,43 +39,73 @@ const AnimatedSection = ({
     return () => observer.disconnect();
   }, [delay]);
 
-  const getAnimationClass = () => {
-    if (!isVisible) return 'opacity-0 translate-y-8';
-    
+  const getInitialStyles = (): React.CSSProperties => {
+    const base: React.CSSProperties = {
+      opacity: 0,
+      transition: `all 0.8s cubic-bezier(0.16, 1, 0.3, 1)`,
+    };
+
     switch (animation) {
       case 'fade-up':
-        return 'opacity-100 translate-y-0';
+        return { ...base, transform: 'translateY(40px)' };
+      case 'fade-down':
+        return { ...base, transform: 'translateY(-40px)' };
+      case 'fade-left':
+        return { ...base, transform: 'translateX(40px)' };
       case 'fade-right':
-        return 'opacity-100 translate-x-0';
+        return { ...base, transform: 'translateX(-40px)' };
       case 'scale':
-        return 'opacity-100 scale-100';
+        return { ...base, transform: 'scale(0.9)' };
+      case 'blur':
+        return { ...base, filter: 'blur(10px)', transform: 'translateY(20px)' };
+      case 'rotate':
+        return { ...base, transform: 'rotate(-5deg) translateY(20px)' };
+      case 'none':
+        return {};
       default:
-        return 'opacity-100';
+        return base;
     }
   };
 
-  const getInitialClass = () => {
-    switch (animation) {
-      case 'fade-up':
-        return 'translate-y-8';
-      case 'fade-right':
-        return '-translate-x-8';
-      case 'scale':
-        return 'scale-95';
-      default:
-        return '';
-    }
+  const getVisibleStyles = (): React.CSSProperties => {
+    return {
+      opacity: 1,
+      transform: 'translateY(0) translateX(0) scale(1) rotate(0)',
+      filter: 'blur(0)',
+      transition: `all 0.8s cubic-bezier(0.16, 1, 0.3, 1)`,
+    };
   };
+
+  // Handle staggered children
+  if (stagger && isVisible) {
+    const staggeredChildren = Children.map(children, (child, index) => {
+      if (isValidElement(child)) {
+        return cloneElement(child as React.ReactElement<{ style?: React.CSSProperties }>, {
+          style: {
+            ...(child.props as { style?: React.CSSProperties }).style,
+            animationDelay: `${index * staggerDelay}ms`,
+          },
+        });
+      }
+      return child;
+    });
+
+    return (
+      <div
+        ref={ref}
+        className={cn(className)}
+        style={isVisible ? getVisibleStyles() : getInitialStyles()}
+      >
+        {staggeredChildren}
+      </div>
+    );
+  }
 
   return (
     <div
       ref={ref}
-      className={cn(
-        'transition-all duration-700 ease-out',
-        !isVisible && `opacity-0 ${getInitialClass()}`,
-        isVisible && getAnimationClass(),
-        className
-      )}
+      className={cn(className)}
+      style={isVisible ? getVisibleStyles() : getInitialStyles()}
     >
       {children}
     </div>

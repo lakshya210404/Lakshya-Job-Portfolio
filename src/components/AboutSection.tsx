@@ -44,7 +44,7 @@ const AboutSection = () => {
       <div className="absolute bottom-0 left-0 w-1/3 h-96 bg-gradient-to-r from-primary/10 to-transparent blur-3xl pointer-events-none" />
       
       <div className="container mx-auto px-6">
-        <AnimatedSection>
+        <AnimatedSection animation="fade-up">
           <div className="text-center mb-16">
             <Badge variant="glow" className="mb-4">Who Am I</Badge>
             <h2 className="text-headline font-mono font-bold mb-4">
@@ -57,7 +57,7 @@ const AboutSection = () => {
         </AnimatedSection>
 
         {/* Who Am I Story */}
-        <AnimatedSection delay={100}>
+        <AnimatedSection delay={100} animation="blur">
           <div className="max-w-4xl mx-auto mb-20">
             <div className="glass-card rounded-2xl p-8 md:p-12 border-glow">
               <div className="prose prose-invert max-w-none">
@@ -78,7 +78,7 @@ const AboutSection = () => {
         {/* Core Competencies */}
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
           {highlights.map((item, index) => (
-            <AnimatedSection key={item.title} delay={index * 100}>
+            <AnimatedSection key={item.title} delay={index * 100} animation="scale">
               <div className="glass-card rounded-xl p-6 hover:border-primary/50 transition-all duration-300 group hover-lift">
                 <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 ${
                   item.color === 'primary' 
@@ -99,7 +99,7 @@ const AboutSection = () => {
         </div>
 
         {/* Additional Skills */}
-        <AnimatedSection delay={300}>
+        <AnimatedSection delay={300} animation="fade-up">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-16">
             {skills.map((skill) => (
               <div key={skill.name} className="text-center p-4 rounded-xl glass hover:bg-primary/5 transition-all duration-300 group">
@@ -112,7 +112,7 @@ const AboutSection = () => {
         </AnimatedSection>
 
         {/* Stats */}
-        <AnimatedSection delay={400}>
+        <AnimatedSection delay={400} animation="fade-up">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 max-w-4xl mx-auto">
             {[
               { value: '4+', label: 'Internships' },

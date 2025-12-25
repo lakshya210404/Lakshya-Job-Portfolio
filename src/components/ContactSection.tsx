@@ -100,7 +100,7 @@ const ContactSection = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-primary/5 via-transparent to-transparent pointer-events-none" />
       
       <div className="container mx-auto px-6">
-        <AnimatedSection>
+        <AnimatedSection animation="fade-up">
           <div className="text-center mb-16">
             <Badge variant="glow" className="mb-4">Contact</Badge>
             <h2 className="text-headline font-mono font-bold mb-4">
@@ -118,7 +118,7 @@ const ContactSection = () => {
             <div>
               <div className="grid sm:grid-cols-2 gap-4 mb-8">
                 {contactInfo.map((item, index) => (
-                  <AnimatedSection key={item.label} delay={index * 100}>
+                  <AnimatedSection key={item.label} delay={index * 100} animation="fade-right">
                     <div className="glass-card rounded-xl p-5 hover:border-primary/30 transition-all duration-300 group">
                       <div className="flex items-center gap-4">
                         <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
@@ -148,7 +148,7 @@ const ContactSection = () => {
               </div>
 
               {/* Social Links */}
-              <AnimatedSection delay={400}>
+              <AnimatedSection delay={400} animation="fade-up">
                 <div className="flex items-center gap-4">
                   <a
                     href="mailto:lakshyasprasad21@gmail.com"
@@ -180,7 +180,7 @@ const ContactSection = () => {
             </div>
 
             {/* Contact Form */}
-            <AnimatedSection delay={200}>
+            <AnimatedSection delay={200} animation="blur">
               <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-8 border-glow">
                 <h3 className="font-mono text-xl font-bold mb-6">
                   Send me a message
