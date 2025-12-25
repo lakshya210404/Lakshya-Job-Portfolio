@@ -9,7 +9,7 @@ const ExperienceSection = () => {
       <div className="absolute top-0 right-0 w-1/2 h-96 bg-gradient-to-l from-secondary/5 to-transparent blur-3xl pointer-events-none" />
       
       <div className="container mx-auto px-6">
-        <AnimatedSection>
+        <AnimatedSection animation="fade-up">
           <div className="text-center mb-16">
             <Badge variant="purple" className="mb-4">Experience</Badge>
             <h2 className="text-headline font-mono font-bold mb-4">

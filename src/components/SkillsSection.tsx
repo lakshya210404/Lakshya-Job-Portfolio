@@ -77,7 +77,7 @@ const SkillsSection = () => {
       <div className="absolute inset-0 cyber-grid opacity-20" />
       
       <div className="container mx-auto px-6">
-        <AnimatedSection>
+        <AnimatedSection animation="fade-up">
           <div className="text-center mb-16">
             <Badge variant="glow" className="mb-4">Skills</Badge>
             <h2 className="text-headline font-mono font-bold mb-4">
@@ -90,7 +90,7 @@ const SkillsSection = () => {
         </AnimatedSection>
 
         {/* Interactive orbit visualization - desktop only */}
-        <AnimatedSection delay={200}>
+        <AnimatedSection delay={200} animation="scale">
           <div className="hidden lg:block mb-20">
             <SkillOrbit />
           </div>
@@ -99,7 +99,7 @@ const SkillsSection = () => {
         {/* Skill categories grid with icons */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {skillCategories.map((category, index) => (
-            <AnimatedSection key={category.title} delay={index * 100}>
+            <AnimatedSection key={category.title} delay={index * 100} animation="fade-up">
               <div className="glass-card rounded-xl p-6 hover:border-primary/30 transition-all duration-300 group">
                 <h3 className="font-mono text-sm font-bold mb-4 uppercase tracking-wider text-primary">
                   {category.title}

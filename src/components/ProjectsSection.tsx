@@ -106,7 +106,7 @@ const ProjectsSection = () => {
       <div className="absolute top-1/2 left-0 w-1/2 h-96 bg-gradient-to-r from-primary/5 to-transparent blur-3xl pointer-events-none" />
       
       <div className="container mx-auto px-6">
-        <AnimatedSection>
+        <AnimatedSection animation="fade-up">
           <div className="text-center mb-16">
             <Badge variant="purple" className="mb-4">Projects</Badge>
             <h2 className="text-headline font-mono font-bold mb-4">
@@ -120,7 +120,7 @@ const ProjectsSection = () => {
 
         <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
           {projects.map((project, index) => (
-            <AnimatedSection key={project.title} delay={index * 50}>
+            <AnimatedSection key={project.title} delay={index * 80} animation="scale">
               <ProjectCard {...project} index={index} />
             </AnimatedSection>
           ))}
