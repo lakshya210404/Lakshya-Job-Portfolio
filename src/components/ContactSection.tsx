@@ -121,12 +121,12 @@ const ContactSection = () => {
               <div className="grid sm:grid-cols-2 gap-4 mb-8">
                 {contactInfo.map((item, index) => (
                   <AnimatedSection key={item.label} delay={index * 100} animation="fade-right">
-                    <div className="glass-card rounded-xl p-5 hover:border-primary/30 transition-all duration-300 group">
-                      <div className="flex items-center gap-4">
-                        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <div className="glass-card rounded-xl p-5 hover:border-primary/30 transition-all duration-300 group overflow-hidden">
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors flex-shrink-0">
                           <item.icon className="w-4 h-4 text-primary" />
                         </div>
-                        <div>
+                        <div className="min-w-0 flex-1">
                           <p className="text-muted-foreground text-xs font-mono uppercase tracking-wider mb-0.5">
                             {item.label}
                           </p>
@@ -135,12 +135,12 @@ const ContactSection = () => {
                               href={item.href}
                               target={item.href.startsWith('http') ? '_blank' : undefined}
                               rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                              className="text-foreground text-sm font-medium hover:text-primary transition-colors"
+                              className="text-foreground text-sm font-medium hover:text-primary transition-colors block truncate"
                             >
                               {item.value}
                             </a>
                           ) : (
-                            <p className="text-foreground text-sm font-medium">{item.value}</p>
+                            <p className="text-foreground text-sm font-medium truncate">{item.value}</p>
                           )}
                         </div>
                       </div>
