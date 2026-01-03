@@ -10,8 +10,21 @@ import project5 from '@/assets/project-5.jpg';
 import project6 from '@/assets/project-6.jpg';
 import project7 from '@/assets/project-7.jpg';
 import project8 from '@/assets/project-8.jpg';
+import project9 from '@/assets/project-9.jpg';
 
 const projects = [
+  {
+    title: "Jinder - Job Matching Web App",
+    description: "Built a modern job application platform with swipe-based matching, connecting job seekers with opportunities through an intuitive interface.",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Supabase", "Vite"],
+    highlights: [
+      "Implemented swipe-based job matching interface for intuitive UX",
+      "Built real-time job listings and application tracking",
+      "Integrated authentication and user profile management",
+      "Designed responsive UI with modern design system"
+    ],
+    image: project9
+  },
   {
     title: "Internal Developer Platform & Tooling System",
     description: "Built an internal developer platform for service configuration, monitoring, and automation with a focus on developer productivity.",
