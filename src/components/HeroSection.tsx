@@ -29,6 +29,10 @@ const HeroSection = () => {
     'Data Engineer',
     'Systems Engineer',
     'Mobile + AI App Builder',
+    'DevOps Engineer',
+    'Full-Stack Developer',
+    'Cloud Architect',
+    'Software Engineer',
   ];
 
   return (
