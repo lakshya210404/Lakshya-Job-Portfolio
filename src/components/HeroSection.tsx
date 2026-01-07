@@ -19,10 +19,16 @@ const getResumeHref = () => {
 
 const HeroSection = () => {
   const roles = [
-    'DevOps Engineer',
-    'Full-Stack Developer',
-    'Cloud Architect',
-    'Software Engineer',
+    'Full-Stack Engineer',
+    'Backend Engineer',
+    'AI Engineer',
+    'ML Engineer',
+    'Deep Learning Engineer',
+    'Cloud Engineer',
+    'MLOps Engineer',
+    'Data Engineer',
+    'Systems Engineer',
+    'Mobile + AI App Builder',
   ];
 
   return (
