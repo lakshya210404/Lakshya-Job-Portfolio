@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -11,9 +11,10 @@ interface ProjectCardProps {
   highlights?: string[];
   image: string;
   index: number;
+  demoUrl?: string;
 }
 
-const ProjectCard = ({ title, description, technologies, highlights, image, index }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, technologies, highlights, image, index, demoUrl }: ProjectCardProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
@@ -146,6 +147,19 @@ const ProjectCard = ({ title, description, technologies, highlights, image, inde
                 "w-3 h-3 transition-transform",
                 isExpanded && "rotate-90"
               )} />
+            </Button>
+          )}
+          {demoUrl && (
+            <Button
+              variant="outline"
+              size="sm"
+              asChild
+              className="text-xs"
+            >
+              <a href={demoUrl} target="_blank" rel="noopener noreferrer">
+                Live Demo
+                <ExternalLink className="w-3 h-3 ml-1" />
+              </a>
             </Button>
           )}
         </div>
