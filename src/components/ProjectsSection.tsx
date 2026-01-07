@@ -23,7 +23,8 @@ const projects = [
       "Integrated authentication and user profile management",
       "Designed responsive UI with modern design system"
     ],
-    image: project9
+    image: project9,
+    demoUrl: "https://jinder.lovable.app"
   },
   {
     title: "Internal Developer Platform & Tooling System",
@@ -108,7 +109,8 @@ const projects = [
       "Built custom signalling server",
       "Documented architecture and debugging processes"
     ],
-    image: project8
+    image: project8,
+    demoUrl: "https://highvibechat.lovable.app"
   }
 ];
 
