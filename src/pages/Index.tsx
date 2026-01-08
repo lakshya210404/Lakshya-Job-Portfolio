@@ -11,6 +11,7 @@ import Footer from '@/components/Footer';
 import CustomCursor from '@/components/CustomCursor';
 import Preloader from '@/components/Preloader';
 import ScrollProgress from '@/components/ScrollProgress';
+import { supabase } from '@/integrations/supabase/client';
 
 const Index = () => {
   const parallaxRef = useRef<HTMLDivElement>(null);
@@ -25,6 +26,23 @@ const Index = () => {
     if (metaDescription) {
       metaDescription.setAttribute('content', 'Lakshya Prasad - Computer Science student and DevOps Engineer building production-grade cloud applications. Expertise in React, Python, AWS, Azure, Docker, and Kubernetes.');
     }
+
+    // Log visit for analytics (silent, no error shown to user)
+    const logVisit = async () => {
+      try {
+        await supabase.functions.invoke('log-visit', {
+          body: {
+            page: window.location.pathname,
+            referrer: document.referrer || null,
+            userAgent: navigator.userAgent,
+          },
+        });
+      } catch (error) {
+        // Silently fail - don't disrupt user experience
+        console.log('Visit logging skipped');
+      }
+    };
+    logVisit();
 
     // Parallax scroll effect
     const handleScroll = () => {
