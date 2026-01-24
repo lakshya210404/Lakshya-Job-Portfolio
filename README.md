@@ -37,3 +37,42 @@ The site is designed to be fast, clean, and responsive, with a focus on clarity 
 - PostCSS
 
 ## Project Structure
+src/ → application source code
+public/ → static assets
+supabase/ → Supabase configuration
+
+
+## Local Development
+Clone the repo and run:
+
+```bash
+npm install
+npm run dev
+
+
+Then open:
+
+http://localhost:5173
+
+Deployment
+
+The project is continuously deployed to Vercel.
+Any push to the main branch triggers a new production deployment.
+
+Future Improvements
+
+Add detailed case studies for projects
+
+Add blog / technical writing section
+
+Improve accessibility and performance metrics
+
+Expand analytics and monitoring
+
+Author
+
+Lakshya Prasad
+Software Engineering Student
+🔗 GitHub: https://github.com/lakshya210404
+
+🔗 Portfolio: https://job-portfolio-murex.vercel.app
