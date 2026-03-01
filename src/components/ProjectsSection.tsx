@@ -11,6 +11,9 @@ import project6 from '@/assets/project-6.jpg';
 import project7 from '@/assets/project-7.jpg';
 import project8 from '@/assets/project-8.jpg';
 import project9 from '@/assets/project-9.jpg';
+import project10 from '@/assets/project-10.jpg';
+import project11 from '@/assets/project-11.jpg';
+import project12 from '@/assets/project-12.jpg';
 
 const projects = [
   {
@@ -23,7 +26,8 @@ const projects = [
       "Integrated authentication and user profile management",
       "Designed responsive UI with modern design system"
     ],
-    image: project9
+    image: project9,
+    liveUrl: "https://jinder-ai-job-app.vercel.app/"
   },
   {
     title: "Internal Developer Platform & Tooling System",
@@ -58,6 +62,17 @@ const projects = [
       "Deployed on Minikube Kubernetes cluster"
     ],
     image: project3
+  },
+  {
+    title: "Manufacturing Workflow Automation System",
+    description: "Designed and developed a software automation system to simulate manufacturing-style workflows with data-driven process optimization.",
+    technologies: ["Python", "SQL", "REST APIs", "Automation"],
+    highlights: [
+      "Built backend services to collect, process, and analyze operational data",
+      "Implemented data-driven process optimization to reduce manual steps and improve efficiency",
+      "Focused on testing, debugging, documentation, and system reliability"
+    ],
+    image: project10
   },
   {
     title: "Retail Inventory Monitoring System",
@@ -108,7 +123,28 @@ const projects = [
       "Built custom signalling server",
       "Documented architecture and debugging processes"
     ],
-    image: project8
+    image: project8,
+    liveUrl: "https://highvibechat.ca/"
+  },
+  {
+    title: "Java Bill Splitter",
+    description: "A Java application for splitting bills among groups, handling tip calculations and uneven splits with a clean interface.",
+    technologies: ["Java", "OOP", "Data Structures"],
+    highlights: [
+      "Implemented flexible bill splitting with tip and tax handling",
+      "Built clean object-oriented architecture"
+    ],
+    image: project11
+  },
+  {
+    title: "Java Mine Escape Game",
+    description: "A maze-based escape game built in Java featuring pathfinding algorithms and interactive gameplay mechanics.",
+    technologies: ["Java", "Algorithms", "Game Logic"],
+    highlights: [
+      "Implemented maze generation and pathfinding algorithms",
+      "Built interactive game loop with player movement and hazard detection"
+    ],
+    image: project12
   }
 ];
 
