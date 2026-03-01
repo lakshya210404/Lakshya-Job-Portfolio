@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -11,9 +11,10 @@ interface ProjectCardProps {
   highlights?: string[];
   image: string;
   index: number;
+  liveUrl?: string;
 }
 
-const ProjectCard = ({ title, description, technologies, highlights, image, index }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, technologies, highlights, image, index, liveUrl }: ProjectCardProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
@@ -146,6 +147,18 @@ const ProjectCard = ({ title, description, technologies, highlights, image, inde
                 "w-3 h-3 transition-transform",
                 isExpanded && "rotate-90"
               )} />
+            </Button>
+          )}
+          {liveUrl && (
+            <Button
+              variant="outline"
+              size="sm"
+              asChild
+              className="text-xs"
+            >
+              <a href={liveUrl} target="_blank" rel="noopener noreferrer">
+                Try It <ExternalLink className="w-3 h-3" />
+              </a>
             </Button>
           )}
         </div>
