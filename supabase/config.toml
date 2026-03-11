@@ -1,0 +1,10 @@
+project_id = "iqjbpcekmjytafxzebod"
+
+[functions.send-email]
+verify_jwt = false
+
+[functions.log-visit]
+verify_jwt = false
+
+[functions.send-daily-summary]
+verify_jwt = false
