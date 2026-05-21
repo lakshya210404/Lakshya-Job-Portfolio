@@ -1,4 +1,4 @@
-import { Briefcase, Calendar } from 'lucide-react';
+import { Briefcase, Calendar, Radio } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import AnimatedSection from './AnimatedSection';
 import { cn } from '@/lib/utils';
@@ -9,20 +9,38 @@ interface Experience {
   location: string;
   period: string;
   highlights: string[];
+  tags?: string[];
+  current?: boolean;
 }
 
 const experiences: Experience[] = [
   {
+    title: "Product Support Analyst Intern",
+    company: "D2L",
+    location: "Kitchener, ON",
+    period: "May 2026 - Present",
+    current: true,
+    highlights: [
+      "Investigate and troubleshoot customer issues across Brightspace tools, analyzing product behavior, configuration, permissions, and user/course data to identify root causes",
+      "Use SQL queries and internal database tools during training to inspect learning environment data, validate records, and understand relationships across LMS tables",
+      "Document findings, case notes, timestamps, reproduction steps, and escalation details clearly to support accurate handoffs and faster resolution",
+      "Support technical communication across cases, chats, and phone workflows while learning D2L support processes, product architecture, and customer impact patterns",
+      "Collaborate with internal teams by escalating product defects, usability issues, and configuration concerns with structured evidence"
+    ],
+    tags: ["SQL", "Brightspace", "LMS", "Technical Support", "Debugging", "Case Management", "Product Triage", "Documentation"]
+  },
+  {
     title: "DevOps Engineer Intern",
     company: "Leavoda Technologies",
     location: "Quebec, ON",
-    period: "Current",
+    period: "2025 - 2026",
     highlights: [
       "Built production-grade cloud applications in Linux environments",
       "Developed CI/CD pipelines using GitHub Actions, Jenkins, Azure DevOps",
       "Deployed and monitored services across Azure and AWS"
     ]
   },
+
   {
     title: "UX/UI & Software Developer Intern",
     company: "A-Zone Gaming",
