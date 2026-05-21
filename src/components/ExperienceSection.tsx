@@ -16,7 +16,7 @@ const ExperienceSection = () => {
               Professional <span className="gradient-text">Journey</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              From IT support to DevOps engineering, each role has shaped my expertise in building scalable systems.
+              From product support and database investigation to DevOps and full-stack engineering, each role has strengthened how I debug systems, communicate technically, and build reliable software.
             </p>
           </div>
         </AnimatedSection>
