@@ -93,21 +93,21 @@ const ExperienceTimeline = () => {
   return (
     <div className="relative">
       {/* Vertical line */}
-      <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-secondary to-transparent" />
+      <div className="absolute left-5 sm:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-secondary to-transparent" />
 
       <div className="space-y-12">
         {experiences.map((exp, index) => (
           <AnimatedSection key={index} delay={index * 100} animation="fade-right">
-            <div className="relative flex gap-8 group">
+            <div className="relative flex gap-4 sm:gap-8 group">
               {/* Timeline node */}
               <div className="relative z-10 flex-shrink-0">
                 <div className={cn(
-                  "w-16 h-16 rounded-full flex items-center justify-center transition-colors",
+                  "w-10 h-10 sm:w-16 sm:h-16 rounded-full flex items-center justify-center transition-colors",
                   "bg-card border-2",
                   exp.current ? "glow-primary border-primary" : "border-primary/50 group-hover:border-primary"
                 )}>
                   <Briefcase className={cn(
-                    "w-6 h-6",
+                    "w-4 h-4 sm:w-6 sm:h-6",
                     exp.current ? "text-primary" : "text-muted-foreground"
                   )} />
                 </div>
@@ -118,7 +118,7 @@ const ExperienceTimeline = () => {
 
               {/* Content */}
               <div className={cn(
-                "flex-1 glass-card rounded-xl p-6 transition-colors",
+                "flex-1 min-w-0 glass-card rounded-xl p-4 sm:p-6 transition-colors",
                 exp.current
                   ? "border-primary/50 hover:border-primary shadow-[0_0_30px_-10px_hsl(var(--primary)/0.4)]"
                   : "hover:border-primary/30"
