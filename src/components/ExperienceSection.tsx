@@ -16,7 +16,7 @@ const ExperienceSection = () => {
               Professional <span className="gradient-text">Journey</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              From product support and database investigation to DevOps and full-stack engineering, each role has strengthened how I debug systems, communicate technically, and build reliable software.
+              From product support and system investigation to building software for real-time aviation and camera systems, each role has strengthened how I debug complex systems, write reliable code, and solve technical problems.
             </p>
           </div>
         </AnimatedSection>

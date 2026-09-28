@@ -15,11 +15,26 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
+    title: "Software Developer Intern",
+    company: "Searidge Technologies",
+    location: "Ottawa, ON",
+    period: "Sep 2026 - Present",
+    current: true,
+    highlights: [
+      "Developing and maintaining software for airport surface management and remote/digital tower systems",
+      "Working with PTZ (pan-tilt-zoom) camera systems, including software that interfaces with and controls camera hardware",
+      "Writing and debugging production code primarily in C++ and Python",
+      "Investigating software behavior across camera, video, and system components to identify and resolve defects",
+      "Working with existing large-scale codebases, debugging issues, testing fixes, and improving system reliability",
+      "Collaborating with software engineers on features and bug fixes involving real-time systems, camera control, and aviation technology"
+    ],
+    tags: ["C++", "Python", "PTZ Cameras", "Computer Vision", "Camera Control", "Real-Time Systems", "Debugging", "Git", "Software Development"]
+  },
+  {
     title: "Product Support Analyst Intern",
     company: "D2L",
     location: "Kitchener, ON",
-    period: "May 2026 - Present",
-    current: true,
+    period: "May 2026 - Aug 2026",
     highlights: [
       "Investigate and troubleshoot customer issues across Brightspace tools, analyzing product behavior, configuration, permissions, and user/course data to identify root causes",
       "Use SQL queries and internal database tools during training to inspect learning environment data, validate records, and understand relationships across LMS tables",
