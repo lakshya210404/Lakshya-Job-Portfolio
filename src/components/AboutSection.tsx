@@ -131,7 +131,7 @@ const AboutSection = () => {
               { value: "4+", label: "Internships" },
               { value: "10+", label: "Projects" },
               { value: "8+", label: "Technologies" },
-              { value: "2+", label: "Years Coding" },
+              { value: "5+", label: "Years Coding" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
                 <div className="text-4xl font-mono font-bold gradient-text mb-2">{stat.value}</div>
