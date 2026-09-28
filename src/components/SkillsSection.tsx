@@ -24,7 +24,7 @@ const skillCategories = [
       { name: 'Vue.js', icon: 'https://cdn.simpleicons.org/vuedotjs/4FC08D' },
       { name: 'Next.js', icon: 'https://cdn.simpleicons.org/nextdotjs/FFFFFF' },
       { name: 'HTML', icon: 'https://cdn.simpleicons.org/html5/E34F26' },
-      { name: 'CSS', icon: 'https://cdn.simpleicons.org/css3/1572B6' },
+      { name: 'CSS', icon: 'https://cdn.simpleicons.org/css/1572B6' },
       { name: 'Tailwind', icon: 'https://cdn.simpleicons.org/tailwindcss/06B6D4' },
     ],
   },
@@ -34,7 +34,7 @@ const skillCategories = [
       { name: '.NET Core', icon: 'https://cdn.simpleicons.org/dotnet/512BD4' },
       { name: 'Node.js', icon: 'https://cdn.simpleicons.org/nodedotjs/339933' },
       { name: 'Spring Boot', icon: 'https://cdn.simpleicons.org/springboot/6DB33F' },
-      { name: 'REST APIs', icon: 'https://cdn.simpleicons.org/openapi/6BA539' },
+      { name: 'REST APIs', icon: 'https://cdn.simpleicons.org/openapiinitiative/6BA539' },
       { name: 'GraphQL', icon: 'https://cdn.simpleicons.org/graphql/E10098' },
     ],
   },
@@ -110,11 +110,12 @@ const SkillsSection = () => {
                       key={skill.name}
                       className="flex items-center gap-2 bg-muted/50 px-3 py-2 rounded-lg hover:bg-primary/10 transition-all duration-300 group/skill"
                     >
-                      <img 
-                        src={skill.icon} 
+                      <img
+                        src={skill.icon}
                         alt={skill.name}
                         className="w-5 h-5 object-contain"
                         loading="lazy"
+                        onError={(e) => { e.currentTarget.style.display = 'none'; }}
                       />
                       <span className="text-xs font-mono text-foreground/80 group-hover/skill:text-foreground transition-colors">
                         {skill.name}

@@ -120,7 +120,7 @@ const ContactSection = () => {
             <div>
               <div className="grid sm:grid-cols-2 gap-4 mb-8">
                 {contactInfo.map((item, index) => (
-                  <AnimatedSection key={item.label} delay={index * 100} animation="fade-right">
+                  <AnimatedSection key={item.label} delay={index * 100} animation="fade-right" className="min-w-0 w-full">
                     <div className="glass-card rounded-xl p-5 hover:border-primary/30 transition-all duration-300 group overflow-hidden">
                       <div className="flex items-center gap-4 min-w-0">
                         <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors flex-shrink-0">
@@ -135,7 +135,7 @@ const ContactSection = () => {
                               href={item.href}
                               target={item.href.startsWith('http') ? '_blank' : undefined}
                               rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                              className="text-foreground text-sm font-medium hover:text-primary transition-colors block truncate"
+                              className="text-foreground text-sm font-medium hover:text-primary transition-colors block truncate break-all"
                             >
                               {item.value}
                             </a>
