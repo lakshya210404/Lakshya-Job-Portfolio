@@ -43,7 +43,6 @@ const skillCategories = [
     skills: [
       { name: 'AWS', icon: 'https://cdn.simpleicons.org/amazonwebservices/FF9900' },
       { name: 'Azure', icon: 'https://cdn.simpleicons.org/microsoftazure/0078D4' },
-      {/* AWS/Azure slugs removed from simple-icons; onError fallback below hides broken icons */}
       { name: 'GCP', icon: 'https://cdn.simpleicons.org/googlecloud/4285F4' },
       { name: 'Docker', icon: 'https://cdn.simpleicons.org/docker/2496ED' },
       { name: 'Kubernetes', icon: 'https://cdn.simpleicons.org/kubernetes/326CE5' },
